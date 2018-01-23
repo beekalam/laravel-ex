@@ -10,7 +10,14 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+use App\Person;
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+	// $p = new Person();
+	// return $p->DebugStr();    
+	return redirect('/contacts');
+	
 });
+
+Route::get('contacts','ContactsController@index');
+Route::get('contacts/create','ContactsController@create');
